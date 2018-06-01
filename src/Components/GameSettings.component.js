@@ -38,6 +38,7 @@ class GameSettings extends React.Component {
               type="text"
               id="player-name"
               ref={node => (this.input = node)}
+              maxLength={13}
             />
           </label>
         </div>
@@ -47,6 +48,7 @@ class GameSettings extends React.Component {
             name="level"
             ref={node => (this.select = node)}
             defaultValue="Medium"
+            disabled
           >
             <option>Easy</option>
             <option>Medium</option>
