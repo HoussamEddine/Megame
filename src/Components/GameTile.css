@@ -1,0 +1,64 @@
+.game-tile {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  margin: 0.5px;
+  position: relative;
+  cursor: pointer;
+}
+.game-tile img {
+  height: 35%;
+  width: 35%;
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+.blocker {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: pink; */
+}
+.displayed {
+  display: none;
+}
+.rotateAnim {
+  animation: rotateAnim 3s ease-in-out;
+}
+.visibilityAnim {
+  animation: visibilityAnim 3s ease-in-out;
+}
+@keyframes rotateAnim {
+  0% {
+    transform: rotateY(0deg);
+  }
+  20% {
+    transform: rotateY(180deg);
+  }
+  80% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+@keyframes visibilityAnim {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  73% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

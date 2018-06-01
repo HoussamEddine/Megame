@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Butterfly+Kids");
+* {
+  font-family: "Butterfly Kids", cursive;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a596961c;
+}
