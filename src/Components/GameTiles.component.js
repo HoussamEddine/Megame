@@ -105,7 +105,7 @@ class GameTiles extends React.Component {
               parent.parentNode.style.transition = "all 200ms ease-in";
             }
           });
-        }, 3000);
+        }, 2800);
       });
     } else {
       this.setState({

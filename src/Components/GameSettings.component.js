@@ -43,7 +43,11 @@ class GameSettings extends React.Component {
         </div>
         <div id="level-container">
           <p>Level</p>
-          <select name="level" ref={node => (this.select = node)}>
+          <select
+            name="level"
+            ref={node => (this.select = node)}
+            defaultValue="Medium"
+          >
             <option>Easy</option>
             <option>Medium</option>
             <option>Hard</option>
