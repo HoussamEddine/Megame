@@ -15,7 +15,6 @@ class GameSettings extends React.Component {
       () => {
         this.settings = {
           playerName: this.input.value ? this.input.value : "Player",
-          level: this.select.value,
           isPlaying: this.state.isPlaying,
           score: 0
         };
@@ -38,23 +37,12 @@ class GameSettings extends React.Component {
               type="text"
               id="player-name"
               ref={node => (this.input = node)}
-              maxLength={13}
+              maxLength={14}
+              spellCheck="false"
             />
           </label>
         </div>
-        <div id="level-container">
-          <p>Level</p>
-          <select
-            name="level"
-            ref={node => (this.select = node)}
-            defaultValue="Medium"
-            disabled
-          >
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-          </select>
-        </div>
+
         <div id="play" onClick={event => this.clickHandler(event)}>
           Play
         </div>

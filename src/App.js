@@ -3,12 +3,15 @@ import React from "react";
 import GameTiles from "./Components/GameTiles.component";
 import GameSettings from "./Components/GameSettings.component";
 import GameDetail from "./Components/GameDetail.component";
+import Hamburger from "./Components/Hamburger.component";
+
 import "./App.css";
 
 class App extends React.Component {
   state = {
     closed: false,
-    score: 0
+    score: 0,
+    isActive: true
   };
   getSettingsHandler(settings) {
     this.setState({
@@ -35,8 +38,21 @@ class App extends React.Component {
       }, 2500);
     }
   }
+  shareActiveState(isActive) {
+    this.setState({
+      isActive: isActive
+    });
+    if (isActive === false) {
+      setTimeout(() => {
+        this.setState({
+          isActive: true
+        });
+      }, 2500);
+    }
+  }
+
   render() {
-    const { score, ...settings } = this.state;
+    const { score, isActive, ...settings } = this.state;
 
     return (
       <React.Fragment>
@@ -48,12 +64,17 @@ class App extends React.Component {
           settings={settings}
           close={closed => this.close(closed)}
           score={score}
+          isActive={isActive}
         />
         <GameTiles
-          visibility={settings.isPlaying ? "visible" : "hidden"}
+          isActive={isActive}
           getScore={score => this.getScore(score)}
           isPlaying={settings.isPlaying}
           done={d => this.done(d)}
+        />
+        <Hamburger
+          isPlaying={settings.isPlaying}
+          shareActiveState={isActive => this.shareActiveState(isActive)}
         />
       </React.Fragment>
     );

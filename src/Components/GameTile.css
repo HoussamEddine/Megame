@@ -21,6 +21,10 @@
   align-items: center;
   /* background: pink; */
 }
+.blocker img {
+  height: 30px;
+  width: 30px;
+}
 .displayed {
   display: none;
 }

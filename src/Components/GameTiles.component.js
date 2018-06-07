@@ -108,10 +108,12 @@ class GameTiles extends React.Component {
         }, 2800);
       });
     } else {
-      this.setState({
-        done: true
-      });
-      return this.props.done(done);
+      this.setState(
+        {
+          done: true
+        },
+        () => this.props.done(this.state.done)
+      );
     }
   }
 
@@ -133,15 +135,20 @@ class GameTiles extends React.Component {
       this.iconArrShuffeld = this.shuffle(iconArr);
     }
   }
+
   render() {
+    const isActive = this.props.isActive;
+
     return (
       <div
         className={
-          this.props.isPlaying ? " game-container show" : "game-container hide"
+          this.props.isPlaying && isActive
+            ? " game-container show"
+            : "game-container hide"
         }
       >
         <div
-          className="game-tiles show"
+          className="game-tiles "
           onClick={event => this.clickHandler(event)}
           ref={n => (this.node = n)}
           style={{ background: "#f5f3f3" }}
