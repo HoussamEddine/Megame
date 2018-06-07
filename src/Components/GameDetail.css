@@ -33,3 +33,10 @@
     margin-left: 60%;
   }
 }
+@media screen and (max-width: 300px) {
+  .game-detail {
+    padding: 60% 60% 60% 90%;
+
+    
+  }
+}
